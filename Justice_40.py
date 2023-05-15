@@ -121,6 +121,7 @@ def load_data():
     df = dataset.query("""
     SELECT * FROM `eidc.cejst_datasets:jf53:next.communities:t46h`
     """).to_dataframe()
+    df.replace('NA', np.nan, inplace=True)
 
     return df
  
@@ -156,7 +157,6 @@ df2 = load_data2()
 
 
 #cleaning CEJST Data 
-df=df.replace({'NA': None})
 df = df.astype({'PM2_5_in_the_air':'float', 'Housing_burden__percent_':'float', 'Percent_pre_1960s_housing__lead_paint_indicator_':'float', 'Median_value_____of_owner_occupied_housing_units':'float', 'Proximity_to_NPL__Superfund__sites':'float', 'Wastewater_discharge':'float', 'Diagnosed_diabetes_among_adults_aged_greater_than_or_equal_t':'float', 'Current_asthma_among_adults_aged_greater_than_or_equal_to_18':'float', 'Life_expectancy__years_':'float', 'Unemployment__percent_':'float', 'Percent_of_individuals___100__Federal_Poverty_Line':'float', 'Percent_individuals_age_25_or_over_with_less_than_high_schoo_2':'float', 'RISK_SCORE': 'float',
                 'SOVI_SCORE': 'float',
                 'EAL_VALT': 'float',
