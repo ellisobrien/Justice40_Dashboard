@@ -135,7 +135,6 @@ df['FIPS']=df['FIPS'].str.zfill(11)
 
 df = pd.merge(df, df3, on="FIPS", how='left')
 
-df['% Non-White'] = 1 - df['Percent_White']
 
 
 #importing json
@@ -182,6 +181,8 @@ df = df.astype({'PM2_5_in_the_air':'float', 'Housing_burden__percent_':'float', 
                 'Percent_White': 'float',
                 'Percent_Hispanic_or_Latino': 'float',
                 'Percent_other_races': 'float'})
+df['% Non-White'] = 1 - df['Percent_White']
+
 
 #cleaning Json Data  
 df2['FIPS'] = df2[['FIPS']].astype(str)
@@ -441,7 +442,7 @@ options=('PM 2.5 in Air',
         'Strong Wind Loss($)',
         'Tornado Loss($)',
         'Wildfire Loss($)',
-         'Winter Weather Loss($)'))
+        'Winter Weather Loss($)'))
 
 #formatting title text 
 df4=df4[df4.state_code == Variable_Name1]
