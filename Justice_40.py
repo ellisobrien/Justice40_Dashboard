@@ -23,7 +23,7 @@ import os
 #dashboard packages
 import streamlit as st
 #setting token 
-os.environ["REDIVIS_API_TOKEN"] = st.secrets["redivis_api_token"]
+os.environ["REDIVIS_API_TOKEN"] = st.secrets["db_password"]
 
 
 
@@ -31,7 +31,7 @@ os.environ["REDIVIS_API_TOKEN"] = st.secrets["redivis_api_token"]
 st.title("Mapping Environmental Injustice: An Exploration of CEJST and National Risk Index Data")
 
 #Adding text describing issue 
-st.write('This Dashboard Uses ')
+st.write('This Dashboard Uses Climate and Economic Justice Screening Tool (CEJST) and National Risk Index (NRI ')
 
 st.write('This tool allows users to visualize CEJST data at the census tract level to see which tracts are disadvantaged and other key correlations.')
          
